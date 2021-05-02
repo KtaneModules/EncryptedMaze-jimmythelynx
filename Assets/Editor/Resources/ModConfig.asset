@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: encryptedMaze
+  title: Encrypted Maze
+  author: jimmythelynx
+  description: "Encrypted\_Maze 1.0\n\nUse the shape, position and spinning direction
+    of two marked coordinates to decrypt your starting position, the goal and the
+    maze you're in. Move around and be irritated by the changing markers.\n\nModule
+    ID:\_encryptedMaze\nCreated by: jimmythelynx\n\nManual: \nRepository:\_https://github.com/jimmythelynx/EncryptedMaze\n\nSound
+    from freesound.org:\n\u201Esuccess\u201C by: grunz"
+  version: 1.0
+  outputFolder: build
+  previewImage: {fileID: 2800000, guid: 459f7883979d2446382c817dc57116cc, type: 3}
