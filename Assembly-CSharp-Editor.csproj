@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F4C2DE90-3794-011D-24E3-32C4C0D705D9}</ProjectGuid>
+    <ProjectGuid>{F893E531-438B-E593-4D55-F433FBBC1159}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -342,10 +342,10 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="KMFramework">
- <HintPath>/Users/maxzehentbauer/Dokumente/Modding KTaNE/MxMods/Encrypted Maze/Assets/Plugins/Managed/KMFramework.dll</HintPath>
+ <HintPath>/Users/maxzehentbauer/Dokumente/Modding KTaNE/MxMods/EncryptedMaze/Assets/Plugins/Managed/KMFramework.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/maxzehentbauer/Dokumente/Modding KTaNE/MxMods/Encrypted Maze/Assets/Plugins/Managed/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/maxzehentbauer/Dokumente/Modding KTaNE/MxMods/EncryptedMaze/Assets/Plugins/Managed/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Users/maxzehentbauer/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -368,7 +368,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{7910E5EB-7EAE-6076-4D66-1DA33B6B122A}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{5497708D-8B95-4301-651A-6CD10DC01248}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

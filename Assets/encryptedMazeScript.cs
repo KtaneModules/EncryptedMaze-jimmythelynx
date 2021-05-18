@@ -586,4 +586,64 @@ public class encryptedMazeScript : MonoBehaviour
             yield break;
         }
     }
+
+	//this code is basically the autosolver eXish made for 'shifted maze' with some adjustments.
+	IEnumerator TwitchHandleForcedSolve()
+	{
+		while (inStrike) { yield return true; yield return new WaitForSeconds(0.1f); }
+
+		var q = new Queue<int[]>();
+		var allMoves = new List<Movement>();
+		var startPoint = new int[] { xPos, yPos };
+		var target = new int[] { xGoal, yGoal };
+		q.Enqueue(startPoint);
+		while (q.Count > 0)
+		{
+			var next = q.Dequeue();
+			if (next[0] == target[0] && next[1] == target[1])
+				goto readyToSubmit;
+			string paths = "";
+			if ((next[1] > 0) && (validMovUp[pickedMaze, next[1], next[0]] == 1)) { paths += "U"; }
+			if ((next[0] < 5) && (validMovLeft[pickedMaze, next[1], next[0] + 1] == 1)) { paths += "R"; }
+			if ((next[1] < 5) && (validMovUp[pickedMaze, next[1] + 1, next[0]] == 1)) { paths += "D"; }
+			if ((next[0] > 0) && (validMovLeft[pickedMaze, next[1], next[0]] == 1)) { paths += "L"; }
+			var cell = paths;
+			var allDirections = "URDL";
+			var offsets = new int[,] { { 0, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 } };
+			for (int i = 0; i < 4; i++)
+			{
+				var check = new int[] { next[0] + offsets[i, 0], next[1] + offsets[i, 1] };
+                if (cell.Contains(allDirections[i]) && !allMoves.Any(x => x.start[0] == check[0] && x.start[1] == check[1]))
+                {
+                    q.Enqueue(new int[] { next[0] + offsets[i, 0], next[1] + offsets[i, 1] });
+                    allMoves.Add(new Movement { start = next, end = new int[] { next[0] + offsets[i, 0], next[1] + offsets[i, 1] }, direction = i });
+                }
+			}
+		}
+		throw new InvalidOperationException("There is a bug in maze generation.");
+		readyToSubmit:
+		KMSelectable[] buttons = new KMSelectable[] { moveUp, moveRight, moveDown, moveLeft };
+		if (allMoves.Count != 0) // Checks for position already being a target
+		{
+			var lastMove = allMoves.First(x => x.end[0] == target[0] && x.end[1] == target[1]);
+			var relevantMoves = new List<Movement> { lastMove };
+			while (lastMove.start != startPoint)
+			{
+				lastMove = allMoves.First(x => x.end[0] == lastMove.start[0] && x.end[1] == lastMove.start[1]);
+				relevantMoves.Add(lastMove);
+			}
+			for (int i = 0; i < relevantMoves.Count; i++)
+			{
+				buttons[relevantMoves[relevantMoves.Count - 1 - i]. direction].OnInteract();
+				yield return new WaitForSeconds(.1f);
+			}
+		}
+	}
+
+	class Movement
+	{
+		public int[] start;
+		public int[] end;
+		public int direction;
+	}
 }

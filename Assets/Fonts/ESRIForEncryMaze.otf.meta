@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 12e40c325196e43b393a23b990735d8e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ESRI Geometric Symbols
+  fontNames:
+  - ESRI Geometric Symbols
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a6889c9eb05854e0bbe6bd0254ce3d18, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
