@@ -1,7 +1,6 @@
-# ShiftedMazeRepository
-Shifted Maze
+# EncryptedMazeRepository
+Encrypted Maze
 
 Created by: jimmythelynx
 
-Verison 1.0 (June 2020)
-Initial upload
+Verison 1.1 (June 2020)
